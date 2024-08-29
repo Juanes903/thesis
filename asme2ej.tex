@@ -1,0 +1,93 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[english,avtiveacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{breqn}
+\usepackage{epsfig}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+\usepackage[style=numeric,sorting=none]{biblatex}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[nodayofweek,level,us]{datetime}
+\newcommand{\myitem}{\item[\checkmark]}
+\addbibresource{bibfile.bib}
+\pagestyle{empty} % No header or footer on the cover page
+
+% Configure title format
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+
+\geometry{top= 1in}
+
+\begin{document}
+
+% Cover page
+\begin{titlepage}
+    \input{CONTENTS/COVER} % Add your cover page content here
+\end{titlepage}
+
+% Set the page style for the rest of the document
+\pagestyle{fancy}
+\fancyhf{} % Clear default header and footer settings
+
+\fancyhead[R]{\includegraphics[width=0.45 \textwidth]{LOGOS/LogoImpetusIndomitusPG.png}}
+\fancyhead[L]{\includegraphics[width=0.1 \textwidth]{LOGOS/LogoUnivalle (1).png}}
+\setlength{\headsep}{1in}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\lfoot{} \cfoot{\thepage} \rfoot{\today}
+
+% Main text starts here
+\onecolumn % Set the text in one column
+\setlength{\parskip}{1em} % Add space between paragraphs
+
+% Table of Contents
+\tableofcontents
+\clearpage
+
+% List of Figures
+\listoffigures
+\clearpage
+
+% List of Tables
+\listoftables
+\clearpage
+
+% Acknowledgements
+%\section*{\LARGE Acknowledgements}
+% Add your acknowledgements here
+\clearpage
+
+% Signatures
+%\section*{\LARGE Signatures}
+% Add the section for signatures here
+\clearpage
+
+% Main text content
+%\section*{\LARGE Introduction}
+\input{CONTENTS/INTRODUCTION.tex}
+\input{CONTENTS/LINE}
+\input{CONTENTS/PROPOSALS}
+\input{CONTENTS/IMPLEMENTATIONS}
+\clearpage
+
+% Bibliography
+\printbibliography
+\addcontentsline{toc}{section}{\LARGE  \textbf{Bibliography}} % Include the references in the table of contents
+\end{document}
